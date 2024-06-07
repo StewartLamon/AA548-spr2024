@@ -50,7 +50,7 @@ K_{k+1}&=\Sigma_{k+1}^pG_{k+1}^{xT}(G_{k+1}^{x}\Sigma_{k+1}^p G_{k+1}^{xT}+G_{k+
 \Sigma_{k+1}&=\Sigma_{k+1}^p-K_{k+1}(G_{k+1}^x\Sigma_{k+1}^pG_{k+1}^{xT}+G_{k+1}^vRG_{k+1}^{vT})K_{k+1}^T
 \end{align*}$$
 
-Notice that we use the full nonlinear system in the mean prediction step but we have to use the linearized system when looking at how the 
+Notice that we use the full nonlinear system in the mean prediction step but we have to use the linearized system when looking at how the covariance propagates through the dynamics. This can lead to errors if the dynamics are not well characterized for small pertubations by a linear system around that point. So it's important to make sure your system can be linearized well around expected states.
 
 Simple example: Problem Setup for Nonlinear Pendulum
 
