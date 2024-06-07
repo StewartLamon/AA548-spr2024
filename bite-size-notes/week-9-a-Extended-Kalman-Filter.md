@@ -111,13 +111,26 @@ G^{v}&=\frac{\partial g}{\partial v} = I
 
 In this case we can see that our dynamics f(x) are nonlinear but our measurement function g(x) is nonlinear. What has resulted is that $G^{x}$ is constant whereas $F_k^x$ will change depending on the state $x_k$, hence it has the subscript k. Also, the noise was assumed to be additive and therefore the jacobians w.r.t. the noise were Identity matrices.
 
+This was simulated at two different noise levels on both a kalman filter linearized around the fixed point and an extended kalman filter\\
+First with a low noise level $R=0.015$
+
+![image](https://github.com/StewartLamon/AA548-spr2024/assets/128524152/14fed07f-cdee-4b08-9489-6ee7ac2babb7)
+![image](https://github.com/StewartLamon/AA548-spr2024/assets/128524152/01430859-79ff-404d-a1eb-f1d2db4853e3)
+
+The linear kalman filter performs pretty well. Let's look at it again with increased noise $R=0.15$.
+
+![image](https://github.com/StewartLamon/AA548-spr2024/assets/128524152/5e530afe-90aa-4848-96d4-d4e298956a58)
+![image](https://github.com/StewartLamon/AA548-spr2024/assets/128524152/1d51f0e6-f938-4ebd-86ea-5a39b2971e96)
+
+The linear kalman filter becomes unstable! It cannot accurately estimate how the covariance matrix passes through the dynamics.
+
 <h3>On optimality and stability:</h3>
 
 One important consequence of linearizing is that this is no longer a truely optimal filter since we are no longer using the actual dynamics but an approximation during the covariance prediction/update steps. This is very important to take into account because the extended kalman filter cannot be used if the nonlinear dynamics is highly nonlinear, such that a local linearization would be invalid and give erroneous estimates.
 
 <h3>Conclusion</h3>
 
-The extended kalman filter is a powerful extension of the linear kalman filter. It performs this extension by approximating the change in the covariance by using a linear approximation of the dynamics and measurement functions f() and g() at each time step using the current estimated state. The linearization can be 
+The Extended Kalman Filter (EKF) is a powerful extension of the Linear Kalman Filter, capable of handling non-linear dynamics and measurements. By approximating the change in covariance through linearization of the non-linear functions f() and g() at each time step using the current estimated state, the EKF effectively manages the complexities introduced by non-linearity. This approach ensures that the filter remains computationally feasible while providing accurate state estimates.
 
 <h3>Refences</h3>
 
