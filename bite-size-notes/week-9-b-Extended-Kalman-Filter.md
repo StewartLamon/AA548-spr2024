@@ -109,7 +109,7 @@ G^{x}&=\frac{\partial g}{\partial x} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}\\
 G^{v}&=\frac{\partial g}{\partial v} = I
 \end{align*}$$
 
-In this case we can see that our dynamics f(x) are nonlinear but our measurement function g(x) is nonlinear. What has resulted is that $G^{x}$ is constant whereas $F_k^x$ will change depending on the state $x_k$, hence it has the subscript k. Also, the noise was assumed to be additive and therefore the jacobians w.r.t. the noise were Identity matrices.
+In this case we can see that our dynamics f(x) are nonlinear but our measurement function g(x) is linear. What has resulted is that $G^{x}$ is constant whereas $F_k^x$ will change depending on the state $x_k$, hence it has the subscript k. Also, the noise was assumed to be additive and therefore the jacobians w.r.t. the noise were Identity matrices.
 
 This was simulated at two different noise levels on both a kalman filter linearized around the fixed point and an extended kalman filter\\
 First with a low noise level $R=0.015$
